@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+ function showHide() {
+   var div = document.getElementById("hidden_div");
+   if (div.style.display == 'none') {
+     div.style.display = '';
+   }
+   else {
+     div.style.display = 'none';
+   }
+ }
+</script>
+     
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: center;
+}
+
+header {background: #FFD700;color:black;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+<header>
+  <h1>Expedia Bookings</h1>
+<img src ="http://eskipaper.com/images/eiffel-tower-wallpaper-18.jpg" width =600 height =200>
+
+</header>
+
+<nav class="nav">
+
+<form id ="myform" method = "post" onsubmit="showHide(); return false;">
+  <fieldset>
+    <legend>Hotel Deals</legend>
+    Going to<br>
+    <input type="text" name="destinationName" placeholder= "Destination, hotel, airport, train station, landmark, or address" id="destionation" size="55"><br>
+    Check-in<br>
+    <input type="date" name="maxTripStartDate" id ="startDate" size="55" placeholder= "yyyy/mm/dd"><br>
+     Check-out<br>
+    <input type="date" name="TripEndDate" id = "endDate" size="55" placeholder= "yyyy/mm/dd"><br>
+     Guests<br>
+     <select>
+  <option value="option1">2 Adults, 0 Children</option>
+  <option value="option2">1 Adults, 0 Children</option>
+  <option value="other">Other</option>
+ 
+   </select></br> </br>
+   
+    <input type="checkbox" name="vehicle" id = ""> Add a flight
+    <input type="checkbox" name="vehicle" id = "" > Add a car<br>
+   <br>
+   <br>
+    <input type="submit" value="Search"  >
+     <INPUT TYPE = "Reset" Value = "Clear">
+  </fieldset>
+  
+  <fieldset >
+ <legend>Search Results</legend>
+   
+  <div id="hidden_div" style="display:none">
+<table >
+  <tr>
+    <th>Hotel</th>
+    <th>Star Rating</th>
+    <th>Price</th>
+    <th>Location</th>
+  </tr>
+  <tr>
+    <td>Royal Amman Hotel</td>
+    <td>5-Star</td>
+        <td>$$$$</td>
+
+    <td>Jabal Amman</td>
+        <td><img src="https://cdn.hotelplanner.com/Common/Images/HotelImage/152844.jpg" alt="" style="width:200px; height:auto;"></td>
+
+  <tr>
+    <td>Four Seasons Hotel</td>
+    <td>7-Star</td>
+        <td>$$$$$</td>
+
+    <td>Fourth circle</td>
+    <td><img src="http://2.bp.blogspot.com/_SFa55-UFHOw/TGVt7P4CzDI/AAAAAAAA3VU/UgthIXRivlE/s1600/IMG_8419.JPG" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+  <tr>
+    <td>Al Balad Hotel</td>
+    <td>3-Star</td>
+    <td>$$</td>
+     <td>City Center</td>
+     <td><img src="http://s-ec.bstatic.com/images/hotel/270x200/592/59268387.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+  <tr>
+    <td>Amman Marriott Hotel</td>
+    <td>5-Star</td>
+    <td>$$$$</td>
+     <td>Fifth Circle </td>
+     <td><img src="https://media-cdn.tripadvisor.com/media/photo-s/02/79/bf/52/exterior.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+  <tr>
+    <td>Amman West Hotel</td>
+    <td>5-Star</td>
+    <td>$$$$</td>
+     <td>Downtown </td>
+     <td><img src="http://farisandfaris.com/knzcms/wp-content/uploads/2013/08/FH3.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+   <tr>
+    <td>Jordan Hotel</td>
+    <td>3-Star</td>
+    <td>$$</td>
+     <td>Tilaa Al Ali </td>
+     <td><img src="https://exp.cdn-hotels.com/hotels/5000000/4510000/4506300/4506300/4506300_43_z.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+   <tr>
+    <td>Arab Tower Hotel</td>
+    <td>2-Star</td>
+    <td>$</td>
+     <td>Fisrt Circle </td>
+     <td><img src="https://pix6.agoda.net/hotelImages/405/405083/405083_14062420230020011284.jpg?s=312x235&ar=16x9" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+   <tr>
+    <td> Zaman Ya Zaman Boutique Hotel</td>
+    <td>5-Star</td>
+    <td>$$$$</td>
+     <td>Abdoun </td>
+     <td><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/10/bc/c6/caravan-hotel.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+   <tr>
+    <td>Grand Millennium Hotel Amman</td>
+    <td>5-Star</td>
+    <td>$$$$</td>
+     <td>Dabouq </td>
+     <td><img src="https://exp.cdn-hotels.com/hotels/13000000/12880000/12873600/12873536/12873536_27_z.jpg" alt="" style="width:200px; height:auto;"></td>
+  </tr>
+
+</table> 
+</div>
+   
+  </fieldset>
+  
+</form>
+
+<ul>
+ Our Address: 
+ 1.425.679.7200 | HQ 333 108th Avenue NE, Bellevue, WA 98004 </br> <br>
+  <li><a href="http://www.expediainc.com/about/">About Expedia</a>
+    <li><a href="http://www.expediainc.com/about/expedia-cares/">Careers Expedia</a></li>
+
+ 
+</ul>
+</nav>
+
+
+<footer>Copyright &copy; Bdour Alzeer</footer>
+</div>
+
+</body>
+</html>
